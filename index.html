@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de hoy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="planner">
+    <header class="planner__header">
+      <p class="planner__eyebrow">Plan de hoy</p>
+      <h1 class="planner__date" id="today-date">&mdash;</h1>
+      <p class="planner__count" id="progress-count" aria-live="polite">0 de 0 hechas</p>
+    </header>
+
+    <div class="arc" aria-hidden="true">
+      <svg viewBox="0 0 600 110" class="arc__svg">
+        <defs>
+          <linearGradient id="dayGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#E0992E" />
+            <stop offset="50%" stop-color="#2E7FA6" />
+            <stop offset="100%" stop-color="#5B4B8A" />
+          </linearGradient>
+        </defs>
+        <path d="M20,100 Q300,10 580,100" class="arc__path" />
+        <circle id="arc-marker" class="arc__marker" r="6" cx="20" cy="100"></circle>
+      </svg>
+      <div class="arc__labels">
+        <span>Mañana</span>
+        <span>Tarde</span>
+        <span>Noche</span>
+      </div>
+    </div>
+
+    <section class="block" data-time="manana">
+      <div class="block__header">
+        <span class="block__bar"></span>
+        <h2 class="block__title">Mañana</h2>
+        <span class="block__now" data-now-badge hidden>ahora</span>
+        <span class="block__tally" data-tally>0/0</span>
+      </div>
+      <ul class="block__list" data-list aria-label="Tareas de la mañana"></ul>
+      <form class="block__add" data-add-form>
+        <input type="text" class="block__input" placeholder="Agregar tarea a la mañana..." aria-label="Agregar tarea a la mañana" autocomplete="off" />
+        <button type="submit" class="block__add-btn" aria-label="Agregar tarea">+</button>
+      </form>
+    </section>
+
+    <section class="block" data-time="tarde">
+      <div class="block__header">
+        <span class="block__bar"></span>
+        <h2 class="block__title">Tarde</h2>
+        <span class="block__now" data-now-badge hidden>ahora</span>
+        <span class="block__tally" data-tally>0/0</span>
+      </div>
+      <ul class="block__list" data-list aria-label="Tareas de la tarde"></ul>
+      <form class="block__add" data-add-form>
+        <input type="text" class="block__input" placeholder="Agregar tarea a la tarde..." aria-label="Agregar tarea a la tarde" autocomplete="off" />
+        <button type="submit" class="block__add-btn" aria-label="Agregar tarea">+</button>
+      </form>
+    </section>
+
+    <section class="block" data-time="noche">
+      <div class="block__header">
+        <span class="block__bar"></span>
+        <h2 class="block__title">Noche</h2>
+        <span class="block__now" data-now-badge hidden>ahora</span>
+        <span class="block__tally" data-tally>0/0</span>
+      </div>
+      <ul class="block__list" data-list aria-label="Tareas de la noche"></ul>
+      <form class="block__add" data-add-form>
+        <input type="text" class="block__input" placeholder="Agregar tarea a la noche..." aria-label="Agregar tarea a la noche" autocomplete="off" />
+        <button type="submit" class="block__add-btn" aria-label="Agregar tarea">+</button>
+      </form>
+    </section>
+
+    <footer class="planner__footer">
+      <button class="planner__reset" id="reset-btn" type="button">Borrar tareas completadas</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
